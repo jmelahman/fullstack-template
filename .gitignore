@@ -30,3 +30,35 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+tsconfig.tsbuildinfo
+
+# Frontend build artifacts and deps
+test-results/
+web/dist/
+web/node_modules/
+web/playwright-report/
+web/playwright/.cache/
+.tmp/
+
+# Local planning artifacts
+plans/
+.playwright-mcp/
+
+# Block all PNGs by default to keep dev/Playwright screenshots out of commits.
+# Allowlist legit asset locations below; use `git add -f` for one-off exceptions.
+*.png
+!assets/*.png
+!web/public/**/*.png
+!web/src/**/*.png
+!docs/public/**/*.png
+.claude-tmp/
+.claude/settings.local.json
+
+# python packaging
+dist/
+*.egg-info/
+__pycache__/
+
+# release artifacts
+/app
