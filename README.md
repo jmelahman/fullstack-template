@@ -70,8 +70,8 @@ to copy from.
    - `APP_` → your env-var prefix (`internal/config`, `cmd/server/cli.go`,
      `vite.config.ts`, `playwright.config.ts`).
 3. The CI/devcontainer image is `lahmanja/devcontainer` (rebuilt by
-   `devcontainer.yml`); point it at your own registry or swap the container
-   jobs for setup-go/setup-node.
+   `devcontainer.yml`, manual dispatch only); point it at your own registry
+   or swap the container jobs for setup-go/setup-node.
 4. Configure repo settings: a `release` environment, `DOCKERHUB_USERNAME` /
    `DOCKERHUB_TOKEN` secrets, PyPI trusted publishing, and GitHub Pages
    (source: GitHub Actions).

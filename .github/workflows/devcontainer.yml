@@ -4,6 +4,11 @@ name: Devcontainer
 # pushes it to Docker Hub as lahmanja/devcontainer:latest. After a run, pin
 # the printed digest in .devcontainer/devcontainer.json and the CI container
 # images in test.yml / release.yml.
+#
+# Manual dispatch only: the image tag is shared across repos, so exactly one
+# repo should own automatic rebuilds. When instantiating this template, point
+# the tag at your own registry, add DOCKERHUB_USERNAME / DOCKERHUB_TOKEN
+# secrets, and optionally restore a push trigger on .devcontainer/** changes.
 
 on:
   workflow_dispatch:
@@ -12,12 +17,6 @@ on:
         description: "Build without cache"
         type: boolean
         default: true
-  push:
-    branches:
-      - master
-    paths:
-      - .devcontainer/**
-      - .github/workflows/devcontainer.yml
 
 permissions: {}
 
