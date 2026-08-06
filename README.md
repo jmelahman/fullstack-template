@@ -113,6 +113,23 @@ wgo run . serve
 cd web && npm install && npm run dev
 ```
 
+### Docs site
+
+The `docs/` VitePress site deploys to GitHub Pages automatically: pushes to
+`master` that touch `docs/**` run `.github/workflows/docs.yml`, which builds
+the site and publishes it through the Pages Actions deploy (no `gh-pages`
+branch). Run it locally with:
+
+```sh
+cd docs && npm install && npm run docs:dev   # http://localhost:5175
+```
+
+One-time setup on a new repo: enable Pages with the "GitHub Actions" source
+(Settings → Pages, or `gh api -X POST repos/<owner>/<repo>/pages -f
+build_type=workflow`), keep `base` in `docs/.vitepress/config.ts` in sync
+with the repo name (it's the URL prefix Pages serves the site under), and
+trigger the first deploy with `gh workflow run docs.yml`.
+
 See `CLAUDE.md` for the full development reference (tests, lint, E2E, docs
 conventions).
 
